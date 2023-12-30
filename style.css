@@ -77,6 +77,8 @@ body * {
     background-repeat: no-repeat;
     background-position: center;
 
+    animation: slide-out 0.4s;
+
     position: absolute;
     top: 50%;
     left: 0;
@@ -84,9 +86,13 @@ body * {
     transform: translateY(-50%);
 }
 
+#switch button:hover {
+    outline: 8px solid var(--highlight-color);
+    cursor: pointer;
+}
+
 .light #switch button {
-    right: 0;
-    left: initial;
+    animation: slide-in 0.4s forwards;
 }
 
 #switch span {
@@ -153,4 +159,26 @@ footer {
     text-align: center;
     font-size: 14px;
     font-weight: 400;
+}
+
+/* animarion */
+
+@keyframes slide-in {
+    from {
+        left: 0;
+    }
+
+    to {
+        left: 50%;
+    }
+}
+
+@keyframes slide-out {
+    from {
+        left: 50%;
+    }
+
+    to {
+        left: 0;
+    }
 }
